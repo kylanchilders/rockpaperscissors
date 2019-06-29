@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 1</title>
+</head>
+
+<body>
+
+  <div id="game">
+
+    User Choice:<p id="user-choice"></p>
+    Computer Choice:<p id="computer-choice"></p>
+    User Wins:<p id="user-wins"></p>
+    User Losses:<p id="user-losses"></p>
+    User Ties:<p id="user-ties"></p>
+
+  </div>
+
+  <script type="text/javascript">
+
+  var userChoice = document.getElementById("user-choice");
+  var computerChoice = document.getElementById("computer-choice");
+  var userWins = document.getElementById("user-wins");
+  var userLosses = document.getElementById("user-losses");
+  var userTies = document.getElementById("user-ties");
+
+  var wins = 0
+
+  var rockPaperScissors = ["r","p","s"];
+    // Whenever a key is pressed, alert "pressed a button".
+    document.onkeyup = function(event) {
+      var userRPS = event.key;
+      
+      var computerRPS = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+
+      if (userRPS === "r" || userRPS == "p" || userRPS === "s"){
+
+        console.log(userRPS, computerRPS)
+
+        if (userRPS === "r" && computerRPS === "s"){
+        wins++
+      }
+      }
+
+    };
+  </script>
+
+</body>
+
+</html>
