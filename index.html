@@ -26,7 +26,9 @@
   var userLosses = document.getElementById("user-losses");
   var userTies = document.getElementById("user-ties");
 
-  var wins = 0
+  var wins = 0;
+  var losses = 0;
+  var ties = 0;
 
   var rockPaperScissors = ["r","p","s"];
     // Whenever a key is pressed, alert "pressed a button".
@@ -36,14 +38,17 @@
       var computerRPS = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
 
       if (userRPS === "r" || userRPS == "p" || userRPS === "s"){
+   
 
-        console.log(userRPS, computerRPS)
-
-        if (userRPS === "r" && computerRPS === "s"){
-        wins++
+        if ((userRPS === "r" && computerRPS === "s") || 
+            (userRPS === "p" && computerRPS === "r") ||
+            (userRPS === "s" && computerRPS === "p")) {
+        wins++;
+      } else if (userRPS === computerRPS) {
+        ties++;
+      } else {
+        losses++;}
       }
-      }
-
     };
   </script>
 
